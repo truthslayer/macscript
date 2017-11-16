@@ -14,8 +14,9 @@ cp "$hd/chrome/fullpage.js" "$direct/";
 cp "$hd/chrome/fullpage-begin.js" "$direct/";
 echo "$hd/awsend.sh $direct $tod" >> "hi0.text";
 
-parallel --link "$hd/puppet-individual.sh"  :::: "$hd/"inputs-html :::: "$hd/"inputs ::: "$direct";
+# parallel --link "$hd/puppet-individual.sh"  :::: "$hd/"inputs-html :::: "$hd/"inputs ::: "$direct";
 
+for i in `cat inputs`; do "$hd"/puppet-individual.sh http://"$i" "$i" "$direct"; killall Chromium; done
 sleep 200;
 chmod 777 "$direct";
 cd "$hd";

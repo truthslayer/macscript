@@ -12,4 +12,4 @@ name="$2";
 
 
 
-aws s3 cp --recursive "$dir" s3://all2sides.com/news-clips/"$name" --exclude "*" --include "*nytimes*compressed.pdf" --include "*wsj*compressed*" --include "*washingtonpost*compressed*" --include "*fox*compressed*" --include "*png" --include "*cnn*compressed*";
+/Users/jamiemorgenstern/Library/Python/3.6/bin/aws s3 cp --recursive "$dir" s3://all2sides.com/news-clips/"$name" --exclude "*" --include "*nytimes*compressed.pdf" --include "*wsj*compressed*" --include "*washingtonpost*compressed*" --include "*fox*compressed*"  --include "*cnn*compressed*";

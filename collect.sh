@@ -1,14 +1,9 @@
 #!/bin/bash
 
 tod=`date +%Y-%m-%d.%H`
-hd="/Users/jamiemorgenstern/backup/";
+hd="/Users/jamiemorgenstern/backup";
 nc="$hd/html/news-clips";
 direct="$hd/html/news-clips/$tod";
-phant="submitphantomtest.vanilla";
-phantf="phantom-filler";
-wkhf="wkh-filler";
-wkh="submitwhktest.vanilla";
-condor="/usr/local/bin/condor_submit";
 mkdir "$direct";
 chmod 777 "$direct";
 cp "$hd/phantomjs-individual.sh" "$direct/"; 

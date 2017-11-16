@@ -59,10 +59,12 @@ grabpdf-new () {
 	tt=`date +%Y-%m-%d.%H:%M:%S`;
 	if  [ "$1" = "http://www.cnn.com" ]
 	then
-	    gtimeout 80  "$phant" "$rast" "$1" "$direct/$2-phantomjs".png;
+#	    echo "	    gtimeout 80  $phant $rast $1 $direct/$2-phantomjs.png;";
+#	    gtimeout 80  "$phant" "$rast" "$1" "$direct/$2-phantomjs".png;
 	    gtimeout 80  "$phant" "$rast" "$1" "$direct/$2-phantomjs".pdf;
 	    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$direct/$2-phantomjs.compressed".pdf "$direct/$2-phantomjs".pdf;
 	else
+#	    echo "	    gtimeout 80  $phant $rast $1 $direct/$2-phantomjs.png;";
 	    gtimeout 80  "$phant" "$rast" "$1" "$direct/$2-phantomjs".pdf;
 	    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$direct/$2-phantomjs.compressed".pdf "$direct/$2-phantomjs".pdf;
 	fi
